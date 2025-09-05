@@ -1,203 +1,202 @@
 [
-    {
+  {
       "_id": 1,
-      "title": "How to Grow Your Online Store",
-      "description": "Learn the best strategies to grow your online store in today's competitive market.",
+      "title": "如何发展你的在线商店",
+      "description": "学习在当今竞争激烈的市场中发展在线商店的最佳策略。",
       "category": "business",
       "trending": true,
       "coverImage": "book-1.png",
       "oldPrice": 29.99,
       "newPrice": 19.99
-    },
-    {
+  },
+  {
       "_id": 2,
-      "title": "Top 10 Fiction Books This Year",
-      "description": "A curated list of the best fiction books that are trending this year.",
+      "title": "今年十大虚构类书籍",
+      "description": "本年度热门虚构类书籍的精选列表。",
       "category": "books",
       "trending": true,
       "coverImage": "book-2.png",
       "oldPrice": 24.99,
       "newPrice": 14.99
-    },
-    {
+  },
+  {
       "_id": 3,
-      "title": "Mastering SEO in 2024",
-      "description": "Tips and tricks to boost your SEO and rank higher on search engines.",
+      "title": "2024年SEO精通指南",
+      "description": "提升你的SEO并在搜索引擎中获得更高排名的技巧和窍门。",
       "category": "marketing",
       "trending": true,
       "coverImage": "book-3.png",
       "oldPrice": 39.99,
       "newPrice": 29.99
-    },
-    {
+  },
+  {
       "_id": 4,
-      "title": "Best eCommerce Platforms",
-      "description": "A comprehensive guide on choosing the best eCommerce platforms for 2024.",
+      "title": "最佳电子商务平台",
+      "description": "关于2024年选择最佳电子商务平台的综合指南。",
       "category": "business",
       "trending": false,
       "coverImage": "book-4.png",
       "oldPrice": 49.99,
       "newPrice": 39.99
-    },
-    {
+  },
+  {
       "_id": 5,
-      "title": "Non-Fiction Reads You Must Try",
-      "description": "Our top picks for non-fiction books to add to your reading list.",
+      "title": "你必须尝试的非虚构类读物",
+      "description": "我们精选的非虚构类书籍，推荐加入你的阅读清单。",
       "category": "books",
       "trending": true,
       "coverImage": "book-5.png",
       "oldPrice": 19.99,
       "newPrice": 9.99
-    },
-    {
+  },
+  {
       "_id": 6,
-      "title": "Ultimate Guide to Digital Marketing",
-      "description": "A complete guide to digital marketing strategies for 2024.",
+      "title": "数字营销终极指南",
+      "description": "2024年数字营销策略完全指南。",
       "category": "marketing",
       "trending": false,
       "coverImage": "book-6.png",
       "oldPrice": 44.99,
       "newPrice": 34.99
-    },
-    {
+  },
+  {
       "_id": 7,
-      "title": "The First Days",
-      "description": "Katie is driving to work one beautiful day when a dead man jumps into her car and tries to eat her.  That same morning, Jenni opens a bedroom door to find her husband devouring their toddler son. ",
+      "title": "最初的日子",
+      "description": "一天，凯蒂正开车去上班，一个死人突然跳进她的车里想咬她。同一天早上，詹妮打开卧室门，发现她的丈夫正在吞噬他们蹒跚学步的儿子。",
       "category": "horror",
       "trending": true,
       "coverImage": "book-7.png",
       "oldPrice": 59.99,
       "newPrice": 49.99
-    },
-    {
+  },
+  {
       "_id": 8,
-      "title": "The Hunger Games",
-      "description": "Could you survive on your own in the wild, with every one out to make sure you don't live to see the morning?",
+      "title": "饥饿游戏",
+      "description": "在野外，当所有人都想置你于死地，让你活不到第二天早上时，你能独自生存下来吗？",
       "category": "fiction",
       "trending": true,
       "coverImage": "book-8.png",
       "oldPrice": 21.99,
       "newPrice": 16.99
-    },
-    {
+  },
+  {
       "_id": 9,
-      "title": "Harry Potter and the Order of the Phoenix",
-      "description": "Harry Potter is about to start his fifth year at Hogwarts School of Witchcraft and Wizardry. Unlike most schoolboys, Harry never enjoys his summer holidays",
+      "title": "哈利·波特与凤凰社",
+      "description": "哈利·波特即将开始他在霍格沃茨魔法学校的第五年。与大多数男生不同，哈利从不享受他的暑假。",
       "category": "adventure",
       "trending": false,
       "coverImage": "book-9.png",
       "oldPrice": 27.99,
       "newPrice": 18.99
-    },
-    {
+  },
+  {
       "_id": 10,
-      "title": "Pride and Prejudice",
-      "description": "The romantic clash between the opinionated Elizabeth and her proud beau, Mr. Darcy, is a splendid performance of civilized sparring.",
+      "title": "傲慢与偏见",
+      "description": "固执己见的伊丽莎白和她骄傲的恋人达西先生之间的浪漫碰撞，是一场精彩的文明交锋。",
       "category": "fiction",
       "trending": true,
       "coverImage": "book-10.png",
       "oldPrice": 14.99,
       "newPrice": 10.99
-    },
-    {
+  },
+  {
       "_id": 11,
-      "title": "To Kill a Mockingbird",
-      "description": "The unforgettable novel of a childhood in a sleepy Southern town and the crisis of conscience that rocked it. 'To Kill A Mockingbird' became both an instant bestseller",
+      "title": "杀死一只知更鸟",
+      "description": "这部令人难忘的小说讲述了在一个宁静的南方小镇的童年生活，以及震撼小镇的道德危机。《杀死一只知更鸟》一经出版便成为畅销书。",
       "category": "fiction",
       "trending": true,
       "coverImage": "book-11.png",
       "oldPrice": 32.99,
       "newPrice": 25.99
-    },
-    {
+  },
+  {
       "_id": 12,
-      "title": "The Fault in Our Stars",
-      "description": "Despite the tumor-shrinking medical miracle that has bought her a few years, Hazel has never been anything but terminal, her final chapter inscribed upon diagnosis. ",
+      "title": "星运里的错",
+      "description": "尽管缩小肿瘤的医学奇迹让海泽尔多活了几年，但从确诊那一刻起，她就知道自己终将走向终点，她人生的最后一章早已注定。",
       "category": "business",
       "trending": true,
       "coverImage": "book-12.png",
       "oldPrice": 19.99,
       "newPrice": 9.99
-    },
-    {
+  },
+  {
       "_id": 13,
-      "title": "The Picture of Dorian Gray",
-      "description": "Oscar Wilde’s only novel is the dreamlike story of a young man who sells his soul for eternal youth and beauty.",
+      "title": "道林·格雷的画像",
+      "description": "奥斯卡·王尔德唯一的小说讲述了一个年轻男子为永葆青春与美貌而出卖灵魂的梦幻故事。",
       "category": "horror",
       "trending": true,
       "coverImage": "book-13.png",
       "oldPrice": 26.99,
       "newPrice": 21.99
-    },
-    {
+  },
+  {
       "_id": 14,
-      "title": "The Giving Tree",
-      "description": "'Once there was a tree...and she loved a little boy.'So begins a story of unforgettable perception, beautifully written and illustrated by the gifted and versatile Shel Silverstein.",
+      "title": "爱心树",
+      "description": "\"从前有一棵树……她爱上了一个小男孩。\"这是一个关于感知的难忘故事，由才华横溢、多才多艺的谢尔·希尔弗斯坦精心撰写和插图。",
       "category": "fiction",
       "trending": false,
       "coverImage": "book-14.png",
       "oldPrice": 34.99,
       "newPrice": 24.99
-    },
-    {
+  },
+  {
       "_id": 15,
-      "title": "Gone with the Wind",
-      "description": "Scarlett O'Hara, the beautiful, spoiled daughter of a well-to-do Georgia plantation owner, must use every means at her disposal to claw her way out of the poverty she finds herself in after Sherman's March to the Sea.",
+      "title": "飘",
+      "description": "斯嘉丽·奥哈拉是一位富有的乔治亚州种植园主的美丽而娇纵的女儿，在谢尔曼大军横扫佐治亚后，她必须用尽一切办法摆脱贫困。",
       "category": "fiction",
       "trending": false,
       "coverImage": "book-15.png",
       "oldPrice": 22.99,
       "newPrice": 12.99
-    },
-    {
+  },
+  {
       "_id": 16,
-      "title": "The Lightning Thief",
-      "description": "Percy Jackson is a good kid, but he can't seem to focus on his schoolwork or control his temper. And lately, being away at boarding school is only getting worse - Percy could have sworn his pre-algebra teacher turned into a monster and tried to kill him",
+      "title": "波西·杰克逊与神火之盗",
+      "description": "波西·杰克逊是个好孩子，但他似乎无法专注于学业，也控制不住自己的脾气。最近，在寄宿学校的生活越来越糟——波西发誓他的代数老师变成了怪物并试图杀死他。",
       "category": "fiction",
       "trending": false,
       "coverImage": "book-16.png",
       "oldPrice": 24.99,
       "newPrice": 19.99
-    },
-    {
+  },
+  {
       "_id": 17,
-      "title": "Alice’s Adventures in Wonderland",
-      "description": "When Alice sees a white rabbit take a watch out of its waistcoat pocket she decides to follow it, and a sequence of most unusual events is set in motion. This mini book contains the entire topsy-turvy stories of Alice's Adventures in Wonderland",
+      "title": "爱丽丝梦游仙境",
+      "description": "当爱丽丝看到一只白兔从马甲口袋里掏出一块表时，她决定跟着它，一系列极其不寻常的事情就此展开。这本迷你书包含了完整的《爱丽丝梦游仙境》中荒诞离奇的故事。",
       "category": "adventure",
       "trending": true,
       "coverImage": "book-17.png",
       "oldPrice": 49.99,
       "newPrice": 39.99
-    },
-    {
+  },
+  {
       "_id": 18,
-      "title": "Divergent",
-      "description": "On an appointed day of every year, all sixteen-year-olds must select the faction to which they will devote the rest of their lives. For Beatrice, the decision is between staying with her family and being who she really is",
+      "title": "分歧者",
+      "description": "每年的指定日子，所有16岁的青少年都必须选择他们将为之奉献一生的派系。对比阿特丽斯来说，这个决定是在留在家人身边和做真实的自己之间做出选择。",
       "category": "business",
       "trending": true,
       "coverImage": "book-18.png",
       "oldPrice": 18.99,
       "newPrice": 12.99
-    },
-    {
+  },
+  {
       "_id": 19,
-      "title": "The Alchemist",
-      "description": "Paulo Coelho's masterpiece tells the mystical story of Santiago, an Andalusian shepherd boy who yearns to travel in search of a worldly treasure.",
+      "title": "牧羊少年奇幻之旅",
+      "description": "保罗·科埃略的杰作讲述了一个安达卢西亚牧羊少年圣地亚哥渴望旅行，寻找世间宝藏的神秘故事。",
       "category": "adventure",
       "trending": true,
       "coverImage": "book-19.png",
       "oldPrice": 35.99,
       "newPrice": 27.99
-    },
-    {
+  },
+  {
       "_id": 20,
-      "title": "Four Thousand Weeks",
-      "description": "Nobody needs to be told there isn’t enough time. We’re obsessed with our lengthening to-do lists, overfilled inboxes, work-life balance, and ceaseless battle against distraction; we’re deluged with advice on becoming more productive and efficient",
+      "title": "四千周",
+      "description": "无需有人告诉我们时间不够用。我们痴迷于不断变长的待办清单、塞满的收件箱、工作与生活的平衡，以及与分心的无休止斗争；我们被各种提高生产力和效率的建议淹没。",
       "category": "business",
       "trending": false,
       "coverImage": "book-20.png",
       "oldPrice": 24.99,
       "newPrice": 14.99
-    }
-  ]
-  
+  }
+]

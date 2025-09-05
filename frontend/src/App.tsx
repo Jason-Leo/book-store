@@ -1,5 +1,6 @@
 import { Outlet } from "react-router"
 import { Navbar } from "./components/Navbar"
+import Footer from "./components/Footer"
 
 
 const App: React.FC = () => {
@@ -9,7 +10,7 @@ const App: React.FC = () => {
       <main className="min-h-screen max-w-screen-2xl mx-auto px-4 py-6">
         <Outlet/>
       </main>
-      <footer className="max-w-screen-2xl mx-auto">Footer</footer>
+      <Footer/>
     </>
   )
 }

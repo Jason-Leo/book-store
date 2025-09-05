@@ -1,10 +1,27 @@
 import React, { useEffect, useState } from 'react'
 import type { bookType } from '../../types/books';
 import { Select } from 'antd';
+import BookCard from '../Book/BookCard';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import { useFetchAllBooksQuery } from '../../redux/features/cart/booksApi';
+
 
 export const TopSellers:React.FC = () => {
-  const [books,setBooks] = useState<bookType[]>([]);
+  
   const [selectBook,setSelectBook] = useState<bookType[]>([]);
+  const {data: books = {book: []}} = useFetchAllBooksQuery([]);
+  console.log(books);
+  
+  useEffect(() => {
+    if (books && books.book && books.book.length > 0) {
+      setSelectBook(books.book);
+    }
+  }, [books]);
+  
   const options = [
     { value: 'Choose a genre', label: '选择一个体裁', disabled: true },
     { value: 'Business', label: '商业' },
@@ -14,20 +31,10 @@ export const TopSellers:React.FC = () => {
   ]
   const handleChange = (value:string)=>{
     const filtered = value === 'Choose a genre'
-      ? books
-      : books.filter(item => item.category === value.toLowerCase())
+      ? books.book
+      : books.book.filter((item: bookType) => item.category === value.toLowerCase())
     setSelectBook(filtered);
   }
-  useEffect(()=>{
-    fetch("books.json")
-    .then(res => res.json())
-    .then(
-        (data) => {
-            setBooks(data);
-            setSelectBook(data);
-        }
-    );
-  },[]);
 
   return (
     <div className='py-10'>
@@ -38,11 +45,41 @@ export const TopSellers:React.FC = () => {
             onChange={handleChange}
             options={options}
         />
-        {
-            selectBook.map((item,index) =>(
-                <div>{ item.title }</div>
-            ))
-        }
+        <Swiper
+          className='mt-6'
+          modules={[Pagination,Navigation]}
+          spaceBetween={30}
+          slidesPerView={1}
+          navigation={true}
+          scrollbar={{ draggable: true }}
+          breakpoints={{
+            640:{
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+            768:{
+              slidesPerView: 2,
+              spaceBetween: 40,
+            },
+            1024:{
+              slidesPerView: 2,
+              spaceBetween: 50,
+            },
+            1180:{
+              slidesPerView: 3,
+              spaceBetween: 50,
+            },
+          }}  
+        >
+            {
+              selectBook &&
+              selectBook.map((item,index) =>(
+                  <SwiperSlide>
+                      <BookCard key={index} book={item}/>
+                  </SwiperSlide>
+              ))
+            }
+        </Swiper>
     </div>
   )
 }

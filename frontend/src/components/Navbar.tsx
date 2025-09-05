@@ -4,9 +4,10 @@ import { Link } from 'react-router';
 import avatarImg from '../assets/avatar.png';
 import type { MenuProps } from 'antd';
 import { Dropdown } from 'antd';
+import { useAppSelector } from '../redux/hook';
 
 export const Navbar:React.FC = () => {
-  const currentUser : boolean = true;
+  const currentUser : boolean = false;
   const items: MenuProps['items'] = [
     {
       key: '1',
@@ -41,6 +42,7 @@ export const Navbar:React.FC = () => {
         ),
       },
   ];
+  const cart = useAppSelector(state => state.cart)
   return (
     <header className="max-w-screen-2xl mx-auto px-4 py-6">
        <nav className="flex justify-between items-center">
@@ -68,7 +70,7 @@ export const Navbar:React.FC = () => {
             </button>
             <Link to="/cart" className='bg-primary p-1 sm:px-6 px-2 flex items-center rounded-sm'>
                 <ShoppingCartOutlined/>
-                <span className='text-sm font-semibold sm:ml-1'>0</span>
+                <span className='text-sm font-semibold sm:ml-1'>{ cart.length }</span>
             </Link>
         </div>
        </nav>

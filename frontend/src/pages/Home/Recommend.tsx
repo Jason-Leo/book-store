@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import BookCard from '../Book/BookCard';
@@ -7,9 +7,22 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { useFetchAllBooksQuery } from '../../redux/features/cart/booksApi';
+import { SkeletonLoader } from '../../components/SkeletonLoader';
 
 export const Recommend:React.FC = () => {
-  const {data: books = {book: []}} = useFetchAllBooksQuery([]);
+  const {data: books = {book: []}, isLoading} = useFetchAllBooksQuery([]);
+  
+  if (isLoading) {
+    return (
+      <div className='py-10'>
+        <SkeletonLoader type="text" />
+        <div className='mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
+          <SkeletonLoader type="card" count={4} />
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className='py-10'>
         <h2 className='text-3xl font-secondary font-semibold mb-6'>热门推荐</h2>

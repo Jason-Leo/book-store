@@ -21,7 +21,7 @@ const CartPage: React.FC = () => {
     const [page, setPage] = useState(1);
     const cart = useAppSelector(state => state.cart);
     const dispatch = useAppDispatch();
-    const totolPrice = cart.reduce((acc,item)=>acc+item.newPrice,0);
+    const totolPrice = Number(cart.reduce((acc,item)=>acc+item.newPrice,0).toFixed(2));
     const handleClear = ()=>{
       dispatch(clearCart());
     }
@@ -29,7 +29,7 @@ const CartPage: React.FC = () => {
     const handleRemove = (product:bookType)=>{
       try {
         dispatch(removeToCart(product))
-      } catch (e) {
+      } catch {
         throw new Error();
       }
     }
@@ -60,7 +60,7 @@ const CartPage: React.FC = () => {
     return (
       <div
         id="scrollableDiv"
-        className='max-h-[calc(100vh-100px)] px-6  shadow-lg overflow-auto rounded-2xl'
+        className='max-h-[calc(100vh-100px)] px-6 shadow-lg overflow-auto custom-scrollbar rounded-2xl'
       >
         <div className='flex justify-between items-center sticky top-0 bg-white z-10 py-4'>
           <h1 className='md:text-2xl text-xl font-semibold font-primary'>购物车</h1>
@@ -74,7 +74,7 @@ const CartPage: React.FC = () => {
           dataLength={cart.length}
           next={loadMoreData}
           hasMore={cart.length < 50}
-        //   loader={<Skeleton avatar paragraph={{ rows: 1 }} active />}
+          loader={<div>加载中...</div>}
           endMessage={<Divider plain>It is all, nothing more 🤐</Divider>}
           scrollableTarget="scrollableDiv"
         >
@@ -103,7 +103,7 @@ const CartPage: React.FC = () => {
                   }
                 />
                 <div className='h-full flex flex-col justify-around items-end'>
-                  <div className='font-semibold'>${item.newPrice}</div>
+                  <div className='font-semibold'>${(Number(item.newPrice) || 0).toFixed(2)}</div>
                   <div className='text-purple-500 font-bold text-md hover:text-purple-300 cursor-pointer'
                   onClick={()=>handleRemove(item)}
                   >从购物车中移除</div>

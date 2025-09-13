@@ -8,12 +8,13 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { useFetchAllBooksQuery } from '../../redux/features/cart/booksApi';
+import { SkeletonLoader } from '../../components/SkeletonLoader';
 
 
 export const TopSellers:React.FC = () => {
   
   const [selectBook,setSelectBook] = useState<bookType[]>([]);
-  const {data: books = {book: []}} = useFetchAllBooksQuery([]);
+  const {data: books = {book: []}, isLoading} = useFetchAllBooksQuery([]);
   console.log(books);
   
   useEffect(() => {
@@ -34,6 +35,17 @@ export const TopSellers:React.FC = () => {
       ? books.book
       : books.book.filter((item: bookType) => item.category === value.toLowerCase())
     setSelectBook(filtered);
+  }
+
+  if (isLoading) {
+    return (
+      <div className='py-10'>
+        <SkeletonLoader type="text" />
+        <div className='mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+          <SkeletonLoader type="card" count={3} />
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -74,8 +86,8 @@ export const TopSellers:React.FC = () => {
             {
               selectBook &&
               selectBook.map((item,index) =>(
-                  <SwiperSlide>
-                      <BookCard key={index} book={item}/>
+                  <SwiperSlide key={index}>
+                      <BookCard book={item}/>
                   </SwiperSlide>
               ))
             }

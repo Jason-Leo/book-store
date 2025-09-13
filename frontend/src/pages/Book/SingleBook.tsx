@@ -8,6 +8,7 @@ import { useAppDispatch,useAppSelector } from '../../redux/hook';
 import { addToCart } from '../../redux/features/cart/cartSlice';
 import { message } from 'antd';
 import type { bookType } from '../../types/books';
+import { fommatDate } from '../../utils/fommatDate';
 
 const SingleBook:React.FC = () => {
     const { id } = useParams<{ id: string }>();
@@ -60,7 +61,9 @@ const SingleBook:React.FC = () => {
                     <img src={`${getImgUrl(item?.coverImage,1)}`} alt="Img" />
                     <div className='mt-6 space-x-2'>
                         <span className='text-lg font-primary'>创建时间:</span>
-                        <span></span>
+                        <span className='text-md font-mono'>
+                          { fommatDate(item?.createdAt) }
+                        </span>
                     </div>
                     <div className='mt-4 space-x-2'>
                         <span className='text-lg font-primary'>种类:</span>

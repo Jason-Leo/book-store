@@ -34,7 +34,7 @@ export const bookApi = createApi({
         result ? [{type: "Books" as const, id}] : []
     }),
     addBook: builder.mutation({
-        query: (newBook : bookType) => ({
+        query: (newBook : Omit<bookType, '_id'>) => ({
             url:"/create-book",
             method: "POST",
             body: newBook

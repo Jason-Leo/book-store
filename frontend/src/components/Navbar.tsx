@@ -1,13 +1,19 @@
 import React from 'react';
-import { UnorderedListOutlined,SearchOutlined,UserOutlined,HeartOutlined, ShoppingCartOutlined } from '@ant-design/icons';
+import { UnorderedListOutlined,SearchOutlined,UserOutlined, ShoppingCartOutlined } from '@ant-design/icons';
 import { Link } from 'react-router';
 import avatarImg from '../assets/avatar.png';
 import type { MenuProps } from 'antd';
 import { Dropdown } from 'antd';
-import { useAppSelector } from '../redux/hook';
+import { useAppDispatch, useAppSelector } from '../redux/hook';
+import { clearCart } from '../redux/features/cart/cartSlice';
+import { useAuth0 } from '@auth0/auth0-react';
+import { useAI } from '../contexts/AIContext';
 
 export const Navbar:React.FC = () => {
-  const currentUser : boolean = false;
+  const {  isAuthenticated, logout } = useAuth0();
+  const dispatch = useAppDispatch();
+  const currentUser : boolean = isAuthenticated;
+  const { toggleAI } = useAI();
   const items: MenuProps['items'] = [
     {
       key: '1',
@@ -40,7 +46,15 @@ export const Navbar:React.FC = () => {
             核对
           </a>
         ),
-      },
+    },
+    {
+      key: '5',
+      label: (
+        <button onClick={() => { try { dispatch(clearCart()); } finally { logout({ logoutParams: { returnTo: window.location.origin } }) } }}>
+          退出登录
+        </button>
+      ),
+  },
   ];
   const cart = useAppSelector(state => state.cart)
   return (
@@ -65,8 +79,10 @@ export const Navbar:React.FC = () => {
             : 
             <Link to="/login"><UserOutlined style={{ fontSize: '1.5em' }}/></Link>
             }
-            <button className='hidden sm:block'>
-                <HeartOutlined style={{ fontSize: '1.5em' }}/>
+            <button className='hidden sm:block' onClick={toggleAI}>
+                <div className='w-fit h-fit bg-purple-300 hover:bg-purple-400 rounded-lg font-secondary font-semibold px-4 py-2 cursor-pointer transition-colors'>
+                  阅见君AI
+                </div>
             </button>
             <Link to="/cart" className='bg-primary p-1 sm:px-6 px-2 flex items-center rounded-sm'>
                 <ShoppingCartOutlined/>

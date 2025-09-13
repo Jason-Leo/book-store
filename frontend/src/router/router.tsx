@@ -6,6 +6,15 @@ import { Register } from "../components/Register";
 import CartPage from "../pages/Book/CartPage";
 import CheckoutPage from "../pages/Book/CheckoutPage";
 import SingleBook from "../pages/Book/SingleBook";
+import ProtectedRoute from "./ProtectedRoute";
+import OrderPage from "../pages/Book/OrderPage";
+import AdminLogin from "../components/AdminLogin";
+import DashboardLayout from "../pages/Dashboard/DashboardLayout";
+import Dashboard from "../pages/Dashboard/Dashboard";
+import ManageBook from "../pages/Dashboard/ManageBook";
+import AddBook from "../pages/Dashboard/AddBook";
+import EditBook from "../pages/Dashboard/EditBook";
+import AdminRoute from "./AdminRoute";
 
 const router = createBrowserRouter([
     {
@@ -18,7 +27,10 @@ const router = createBrowserRouter([
         },
         {
             path:"/orders",
-            element: <h1>orders</h1>
+            element:  
+            <ProtectedRoute>
+              <OrderPage/>
+            </ProtectedRoute>
         },
         {
             path:"/about",
@@ -38,7 +50,10 @@ const router = createBrowserRouter([
         },
         {
           path:"/checkout",
-          element: <CheckoutPage/>
+          element: 
+          <ProtectedRoute>
+              <CheckoutPage/>
+          </ProtectedRoute>
         },
         {
           path:"/book/:id",
@@ -46,6 +61,32 @@ const router = createBrowserRouter([
         }
       ]
     },
+    {
+      path: "/admin",
+      element: <AdminLogin/>
+    },
+    {
+      path: "/dashboard",
+      element: <AdminRoute> <DashboardLayout/> </AdminRoute>,
+      children:[
+        {
+          path: "",
+          element: <AdminRoute><Dashboard/></AdminRoute>
+        },
+        {
+          path: "add-new-book",
+          element: <AdminRoute><AddBook/></AdminRoute>
+        },
+        {
+          path: "edit-book/:id",
+          element: <AdminRoute><EditBook/></AdminRoute>
+        },
+        {
+          path: "manage-books",
+          element: <AdminRoute><ManageBook/></AdminRoute>
+        },
+      ]
+    }
 ]);
 
 export default router

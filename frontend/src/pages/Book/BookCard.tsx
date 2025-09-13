@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Link } from 'react-router'
 import { ShoppingCartOutlined } from '@ant-design/icons';
 import type { bookType } from '../../types/books';
@@ -40,7 +40,7 @@ const BookCard : React.FC<BookCardProps> = ({book}) => {
         }
         dispatch(addToCart(product))
         success()
-      } catch (e) {
+      } catch {
         error()
       }
   }
@@ -48,13 +48,13 @@ const BookCard : React.FC<BookCardProps> = ({book}) => {
    <>
         {contextHolder}
          <div className='rounded-lg transition-shadow duration-300'>
-        <div className=' flex flex-col sm:flex-row sm:items-center sm:h-72 sm:justify-between gap-4'>
+        <div className=' flex flex-col sm:flex-row sm:items-center sm:h-72 gap-4'>
             <div className='sm:h-72 sm:flex-shrink-0 border border-gray-400 rounded-md'>
                 <Link to={`/book/${book._id}`}>
                     <img 
                     src={`${getImgUrl(book.coverImage,1)}`} 
                     alt="Img" 
-                    className='w-full bg-cover p-2 rounded-md cursor-pointer hover:scale-105 transition-all duration-200'
+                    className='w-48 h-64 object-cover p-2 rounded-md cursor-pointer hover:scale-105 transition-all duration-200'
                     />
                 </Link>
             </div>
@@ -69,9 +69,9 @@ const BookCard : React.FC<BookCardProps> = ({book}) => {
                     { book.description.length > 40 ? `${book.description.slice(0,40)}...` : book.description }
                 </p>
                 <p className='font-medium mb-5'>
-                    ${ book.newPrice }
+                    ${ (Number(book.newPrice) || 0).toFixed(2) }
                     <span className='line-through font-normal ml-2'>
-                        ${ book.oldPrice }
+                        ${ (Number(book.oldPrice) || 0).toFixed(2) }
                     </span>
                 </p>
                 <button className='bg-primary  px-6 py-2 rounded-md text-base font-secondary font-bold hover:bg-secondary hover:text-white transition-all duration-200 cursor-pointer space-x-1 flex items-center gap-1'
